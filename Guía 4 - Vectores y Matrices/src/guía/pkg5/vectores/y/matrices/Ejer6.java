@@ -14,7 +14,8 @@ import java.util.Scanner;
 // @param args the command line arguments 
 
 public class Ejer6 {
-   public static void main(String[] args) { 
+  
+    public static void main(String[] args) { 
        
     Scanner leer = new Scanner(System.in);   
     
@@ -36,22 +37,21 @@ public class Ejer6 {
     public static void llenarMatriz(int[][] matriz) {
         Ejer6 random = new Ejer6();
 
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz.length; j++) {
-                matriz[i][j] = random.nextInt(9 - 1 + 1) + 1;
-            }
-        }
+       for (int[] matriz1 : matriz) {
+           for (int j = 0; j < matriz.length; j++) {
+               matriz1[j] = random.nextInt(9 - 1 + 1) + 1;
+           }
+       }
     }
 
     public static void mostrarMatriz(int[][] matriz) {
         
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz.length; j++) {
-                System.out.print(matriz[i][j] + " ");
-            }
-            
-            System.out.println();
-        }
+       for (int[] matriz1 : matriz) {
+           for (int j = 0; j < matriz.length; j++) {
+               System.out.print(matriz1[j] + " ");
+           }
+           System.out.println();
+       }
     }
 
     public static boolean esMagica(int[][] matriz) {
@@ -77,8 +77,8 @@ public class Ejer6 {
         
         for (int j = 0; j < matriz.length; j++) {
             sumaColumna = 0;
-            for (int i = 0; i < matriz.length; i++) {
-                sumaColumna += matriz[i][j];
+            for (int[] matriz1 : matriz) {
+                sumaColumna += matriz1[j];
             }
             if (j == 0) {
                 comparacion = sumaColumna;
@@ -98,14 +98,18 @@ public class Ejer6 {
         int sumaDiagonalInversa = 0;
         int j = 2;
         
-        for (int i = 0; i < matriz.length; i++) {
-            sumaDiagonalInversa += matriz[i][j];
-            j--;
-        }
+       for (int[] matriz1 : matriz) {
+           sumaDiagonalInversa += matriz1[j];
+           j--;
+       }
         
         return !(sumaDiagonalInversa != sumaDiagonal || 
                 sumaDiagonalInversa != sumaColumna || sumaDiagonalInversa != sumaFila);
     
 }
+
+    private int nextInt(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
 

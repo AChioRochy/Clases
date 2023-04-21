@@ -24,11 +24,9 @@ public class EjerT6 {
        
        if (n1 < 25 && n2 > 25) {
            System.out.println("El valor mayor a 25 es el segundo número.");
-           } 
-            else if (n1 > 25 && n2 < 25); {
+           } else if (n1 > 25 && n2 < 25); {
                System.out.println("El valor mayor a 25 es el primero número.");
-           } 
-            else {
+           } else {
               System.out.println("Ambos, o ninguno, son (o no) mayor a 25.");
     }
    
